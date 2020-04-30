@@ -1,0 +1,292 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@media screen and (min-width:260px) {
+    :root {
+        --p: 1;
+    }
+}
+
+@media screen and (min-width:520px) {
+    :root {
+        --p: 2;
+    }
+}
+
+@media screen and (min-width:780px) {
+    :root {
+        --p: 3;
+    }
+}
+
+div.main {
+    /* display: inline-block; */
+    width: calc(var(--p) * 256px);
+    height: calc(var(--p) * 232px);
+    margin: 0 auto;
+}
+
+div.background,
+div.panel-map,
+div.panel-mask,
+div.panel-tank,
+div.panel-bullet,
+div.panel-grass,
+div.panel-common {
+    position: absolute;
+    width: calc(var(--p) * 256px);
+    height: calc(var(--p) * 240px);
+    display: inline-block;
+    margin: 0 auto;
+}
+
+div.background {
+    background-color: grey;
+}
+
+div.panel-map {
+    position: absolute;
+    width: calc(var(--p) * 208px);
+    height: calc(var(--p) * 208px);
+    background-color: black;
+    margin-left: calc(var(--p) * 16px);
+    margin-top: calc(var(--p) * 16px);
+}
+
+.brick,
+.river,
+.grass,
+.steel {
+    position: absolute;
+    width: calc(var(--p) * 8px);
+    height: calc(var(--p) * 8px);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.brick {
+    background-image: url(./res/brick.gif);
+}
+
+.river {
+    background-image: url(./res/river-horizontal.gif);
+}
+
+.grass {
+    background-image: url(./res/grass.gif);
+}
+
+.steel {
+    background-image: url(./res/steel.gif);
+}
+
+.camp,
+.camp-dead,
+.player,
+.enemy,
+.bullet,
+.blast,
+.blast-big {
+    position: absolute;
+    width: calc(var(--p) * 16px);
+    height: calc(var(--p) * 16px);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.bullet {
+    width: calc(var(--p) * 4px);
+    height: calc(var(--p) * 4px);
+}
+
+.camp {
+    background-image: url(./res/camp0.gif);
+}
+
+.camp-dead {
+    background-image: url(./res/camp1.gif);
+}
+
+.mask,
+.mask-h,
+.mask-v {
+    position: absolute;
+    width: calc(var(--p) * 8px);
+    height: calc(var(--p) * 8px);
+    background-color: black;
+}
+
+.mask-h {
+    height: calc(var(--p) * 4px);
+}
+
+.mask-v {
+    width: calc(var(--p) * 4px);
+}
+
+.score {
+    position: absolute;
+    width: calc(var(--p) * 16px);
+    height: calc(var(--p) * 15px);
+    border: 2px silver solid;
+    color: silver;
+    font-size: calc(var(--p) * 7px);
+    line-height: calc(var(--p) * 16px);
+    text-align: center;
+}
+
+.blast-big {
+    width: calc(var(--p) * 32px);
+    height: calc(var(--p) * 32px);
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: inline-block;
+}
+
+.welcome {
+    position: absolute;
+    width: calc(var(--p) * 256px);
+    height: calc(var(--p) * 224px);
+    background-image: url('./res/select_player.gif');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.black-ground {
+    background-color: black;
+    overflow: hidden;
+}
+
+.grey-ground {
+    background-color: grey;
+}
+
+.transparent-message,
+.message {
+    position: absolute;
+    width: calc(var(--p) * 256px);
+    height: calc(var(--p) * 224px);
+    font-size: calc(var(--p) * 28px);
+    line-height: calc(var(--p) * 224px);
+    text-align: center;
+    color: red;
+}
+
+.message {
+    background-color: grey;
+    color: black;
+}
+
+.gameover {
+    position: absolute;
+    width: calc(var(--p) * 256px);
+    height: calc(var(--p) * 224px);
+    background-color: black;
+    background-image: url(./res/big-gameover.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+
+.ip {
+    position: absolute;
+    width: calc(var(--p) * 16px);
+    height: calc(var(--p) * 8px);
+    background-image: url(./res/1p.gif);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    right: calc(var(--p) * 8px);
+    top: calc(var(--p) * 128px);
+}
+
+.ip-icon {
+    position: absolute;
+    width: calc(var(--p) * 8px);
+    height: calc(var(--p) * 8px);
+    background-image: url(./res/playertank-ico.gif);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    right: calc(var(--p) * 16px);
+    top: calc(var(--p) * 136px);
+}
+
+.ip-count {
+    position: absolute;
+    width: calc(var(--p) * 8px);
+    height: calc(var(--p) * 8px);
+    right: calc(var(--p) * 8px);
+    top: calc(var(--p) * 136px);
+    font-size: calc(var(--p) * 8px);
+    text-align: right;
+    font-weight: bolder;
+    line-height: calc(var(--p) * 8px);
+}
+
+.flag {
+    position: absolute;
+    width: calc(var(--p) * 16px);
+    height: calc(var(--p) * 16px);
+    background-image: url(./res/flag.gif);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    right: calc(var(--p) * 8px);
+    top: calc(var(--p) * 160px);
+}
+
+.flag-no {
+    position: absolute;
+    width: calc(var(--p) * 16px);
+    height: calc(var(--p) * 8px);
+    right: calc(var(--p) * 8px);
+    top: calc(var(--p) * 168px);
+    font-size: calc(var(--p) * 8px);
+    font-weight: bolder;
+    text-align: right;
+}
+
+.enemy-left {
+    position: absolute;
+    display: inline-block;
+    width: calc(var(--p) * 16px);
+    height: calc(var(--p) * 80px);
+    right: calc(var(--p) * 8px);
+    top: calc(var(--p) * 16px);
+    font-size: 0;
+}
+
+.enemy-left>div {
+    position: relative;
+    display: inline-block;
+    width: calc(var(--p) * 8px);
+    height: calc(var(--p) * 8px);
+    background-image: url('res/enemytank-ico.gif');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.signature {
+    position: absolute;
+    display: inline-block;
+    height: 12px;
+    color: #989898;
+    bottom: 10px;
+    right: 0px;
+}
+
+.property,
+.shield {
+    position: absolute;
+    display: inline-block;
+    height: calc(var(--p) * 16px);
+    width: calc(var(--p) * 16px);
+    background: transparent;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
